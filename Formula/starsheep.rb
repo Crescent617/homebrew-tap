@@ -6,8 +6,8 @@ class Starsheep < Formula
   desc "A blazingly fast, customizable shell prompt generator written in Zig"
   homepage "https://github.com/Crescent617/starsheep"
   license "MIT"
-  url "https://github.com/Crescent617/starsheep/archive/refs/tags/v0.1.1.tar.gz"
-  sha256 "c92e347bf96730c5f23e0b1c0c45740becb503f5705710213635794b5bf48d4d"
+  url "https://github.com/Crescent617/starsheep/archive/refs/tags/v0.1.2.tar.gz"
+  sha256 "8107f102c4c355f6f936a3f92d4f2036abe36c84d07c85c6c126d354d83b6c03"
 
   head "https://github.com/Crescent617/starsheep.git", branch: "main"
 
