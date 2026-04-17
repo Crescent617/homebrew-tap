@@ -9,7 +9,7 @@ class Yomi < Formula
 
   bottle do
     root_url "https://github.com/Crescent617/yomi/releases/download/v0.1.0"
-    sha256 arm64_sequoia: "d2638d669c14cf24e10d0282c1969a5a4e76f1289a8306e77262a688a78564d9"
+    sha256 arm64_sequoia: "bbbc0cfcb086fd8373c8f1d81aa36eab5eeb599a2408a516eed15ba11fe0573c"
   end
 
   depends_on "rust" => :build
