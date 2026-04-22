@@ -5,11 +5,11 @@ class Yomi < Formula
   license "MIT"
 
   url "https://github.com/Crescent617/yomi/archive/refs/tags/v0.1.9.tar.gz"
-  sha256 "5d912b9301ef4e449a542529b7e7e8bb8d853f8f0219ffe59f2bde958aa3593b"
+  sha256 "86643435f1587021bc4f6c59ae9cd0096123186847bc7449c637b68d7f9a49b4"
 
   bottle do
     root_url "https://github.com/Crescent617/yomi/releases/download/v0.1.9"
-    sha256 arm64_sequoia: "8e92fcec090ad0e7cdd5b657437be1e88aea4701df89f2ed7ea1ac414ae329e1"
+    sha256 arm64_sequoia: "21e1c83189a09d2ad0a565c36277a99f6774908a8154fbecc393f2083009a6d1"
   end
 
   depends_on "rust" => :build
