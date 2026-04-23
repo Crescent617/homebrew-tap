@@ -1,15 +1,15 @@
 class Yomi < Formula
   desc "AI coding assistant CLI built in Rust"
   homepage "https://github.com/Crescent617/yomi"
-  version "0.1.11"
+  version "0.1.12"
   license "MIT"
 
-  url "https://github.com/Crescent617/yomi/archive/refs/tags/v0.1.11.tar.gz"
-  sha256 "4369b7974ed60741c9fe46feb7d030d008e525a252588767708f3b613ab02d93"
+  url "https://github.com/Crescent617/yomi/archive/refs/tags/v0.1.12.tar.gz"
+  sha256 "ea4080d927898199753bb1ccc049761790882b95c51e4ac1c3f16f06809064fe"
 
   bottle do
-    root_url "https://github.com/Crescent617/yomi/releases/download/v0.1.11"
-    sha256 arm64_sequoia: "84f268e5935fff9b685eec8e11a2877c37dc95184918d12d49cbc6826a167ff6"
+    root_url "https://github.com/Crescent617/yomi/releases/download/v0.1.12"
+    sha256 arm64_sequoia: "2fdf93170d572510bf2a34335d96d1411b29df7c480df19a17468fbd757c88a8"
   end
 
   depends_on "rust" => :build
