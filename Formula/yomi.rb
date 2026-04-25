@@ -1,24 +1,30 @@
 class Yomi < Formula
-  desc "AI coding assistant CLI built in Rust"
+  desc "AI coding assistant CLI featuring async agent loop and TUI interface"
   homepage "https://github.com/Crescent617/yomi"
-  version "0.1.14"
+  version "0.1.17"
   license "MIT"
 
-  url "https://github.com/Crescent617/yomi/archive/refs/tags/v0.1.14.tar.gz"
-  sha256 "aade4c99b48e8a1feedc63b52cfd59a5378f60adf39db15d38e8f44f62c13014"
-
-  bottle do
-    root_url "https://github.com/Crescent617/yomi/releases/download/v0.1.14"
-    sha256 arm64_sequoia: "9956cdf8a58876abd9b85708a653a07e2384e8936174518616afd07b4b788fe8"
+  on_macos do
+    on_arm do
+      url "https://github.com/Crescent617/yomi/releases/download/v0.1.17/yomi-0.1.17-aarch64-apple-darwin.tar.gz"
+      sha256 "01a40044e496e4723e2ea7afc75f32cce1466454f8f9fee9222489ee15087964"
+    end
+    on_intel do
+      url "https://github.com/Crescent617/yomi/releases/download/v0.1.17/yomi-0.1.17-x86_64-apple-darwin.tar.gz"
+      sha256 "931323ad2f7046d12aaf9f812ca61dae2a3895dbe99827770ed1aadf2b221c2a"
+    end
   end
 
-  depends_on "rust" => :build
+  on_linux do
+    url "https://github.com/Crescent617/yomi/releases/download/v0.1.17/yomi-0.1.17-x86_64-unknown-linux-gnu.tar.gz"
+    sha256 "da77f47ae29af3a6f56340d39743991e9677faed62ff0b3a79bd5351776f1fb7"
+  end
 
   def install
-    system "cargo", "install", "--locked", "--root", prefix, "--path", "."
+    bin.install "yomi"
   end
 
   test do
-    assert_match "yomi", shell_output("#{bin}/yomi --help")
+    system "#{bin}/yomi", "--version"
   end
 end
