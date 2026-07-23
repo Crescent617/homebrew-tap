@@ -6,15 +6,18 @@ class Starsheep < Formula
   desc "A blazingly fast, customizable shell prompt generator written in Zig"
   homepage "https://github.com/Crescent617/starsheep"
   license "MIT"
-  url "https://github.com/Crescent617/starsheep/archive/refs/tags/v0.1.3.tar.gz"
-  sha256 "1d06e0edcc11ab8e96affea9799cd8fb8fc3534b93ce0f3a0de537ed34af9109"
+  url "https://github.com/Crescent617/starsheep/archive/refs/tags/v0.1.4.tar.gz"
+  sha256 "1b6c2a6d9a37d07741f22796d0b7ba86aa205b131035a8d1f607f5591352d5a4"
 
   head "https://github.com/Crescent617/starsheep.git", branch: "main"
 
-  depends_on "zig" => :build
+  depends_on "zig@0.15" => :build
   depends_on "libgit2"
 
   def install
+    # zig@0.15 is keg-only; put its bin on PATH for the build
+    ENV.prepend_path "PATH", Formula["zig@0.15"].opt_bin
+
     # Build the project
     system "zig", "build", "--release=safe"
 
@@ -37,8 +40,11 @@ class Starsheep < Formula
   end
 
   test do
-    # Test basic functionality
-    assert_match "starsheep", shell_output("#{bin}/starsheep --help")
+    # Test version output
+    assert_match version.to_s, shell_output("#{bin}/starsheep version")
+
+    # Test basic functionality (yazap prints help to stderr, so merge streams)
+    assert_match "starsheep", shell_output("#{bin}/starsheep --help 2>&1")
 
     # Test init command
     init_output = shell_output("#{bin}/starsheep init zsh")
