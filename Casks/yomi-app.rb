@@ -1,6 +1,6 @@
 cask "yomi-app" do
-  version "0.6.21"
-  sha256 "f7a13af6ec9be80e77c9ffa37b73a48a0b36d56569a542319f87fe0d6fcdff39"
+  version "0.6.22"
+  sha256 "dee5291b75a12af73f7fbb6a5904dab5806cd73bb0668ee6b88c1eda74ae385d"
 
   url "https://github.com/Crescent617/yomi/releases/download/v#{version}/Yomi_#{version}_aarch64.dmg"
   name "Yomi"
