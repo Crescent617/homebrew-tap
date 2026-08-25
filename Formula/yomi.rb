@@ -1,19 +1,19 @@
 class Yomi < Formula
   desc "AI coding assistant CLI featuring async agent loop and TUI interface"
   homepage "https://github.com/Crescent617/yomi"
-  version "0.9.17"
+  version "0.9.18"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/Crescent617/yomi/releases/download/v0.9.17/yomi-0.9.17-aarch64-apple-darwin.tar.gz"
-      sha256 "3c2b969dae734770279231fde7c26be7bca0285ea6661a83b04d65373e41b644"
+      url "https://github.com/Crescent617/yomi/releases/download/v0.9.18/yomi-0.9.18-aarch64-apple-darwin.tar.gz"
+      sha256 "6c54d74da0e951afe2c177613124590c92cb8cd7872afaf25feadc8f4873bfea"
     end
   end
 
   on_linux do
-    url "https://github.com/Crescent617/yomi/releases/download/v0.9.17/yomi-0.9.17-x86_64-unknown-linux-gnu.tar.gz"
-    sha256 "d68bbff95bddd3136dd392fd0f1e05ba7863e6c0d6493a4911cc12f06ed0fd69"
+    url "https://github.com/Crescent617/yomi/releases/download/v0.9.18/yomi-0.9.18-x86_64-unknown-linux-gnu.tar.gz"
+    sha256 "ef2d9473b5102f4443bb3e81f3d95c5da3756658257aeba861b6efde69516ba2"
   end
 
   def install
