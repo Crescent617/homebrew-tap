@@ -7,13 +7,13 @@ class Yomi < Formula
   on_macos do
     on_arm do
       url "https://github.com/Crescent617/yomi/releases/download/v0.10.13/yomi-0.10.13-aarch64-apple-darwin.tar.gz"
-      sha256 "7a34381c83acb3296026b381006d023fec90f1b1e49d07f4fb6b4346d6641b95"
+      sha256 "78fdda7713a964bdeef6d16ea1d11db6ca72dfd45b68d278dfdf428a67794320"
     end
   end
 
   on_linux do
     url "https://github.com/Crescent617/yomi/releases/download/v0.10.13/yomi-0.10.13-x86_64-unknown-linux-gnu.tar.gz"
-    sha256 "880e7be30199824762b30675efd96638712c2aa00da66131a9743e4b0412db70"
+    sha256 "747cc79e115a8278e072addbe7d4d167f019186ccba67d722e2fb81d945cab0f"
   end
 
   def install
