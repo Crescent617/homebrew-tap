@@ -7,6 +7,10 @@ cask "yomi-app" do
   desc "AI coding assistant with GUI"
   homepage "https://github.com/Crescent617/yomi"
 
+  # GUI 会话里的 agent 依赖 PATH 上的 yomi CLI（yomi doc 内置手册、
+  # session wait / cron 等自管理命令）——装 GUI 必须带上 CLI。
+  depends_on formula: "crescent617/tap/yomi"
+
   app "Yomi.app"
 
   zap trash: [
