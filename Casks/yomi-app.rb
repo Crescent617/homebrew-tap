@@ -16,6 +16,20 @@ cask "yomi-app" do
 
   app "Yomi.app"
 
+  # 自签证书未过 Apple 公证，quarantine 会让 Gatekeeper 在每个新版
+  # 首次打开时拦截（登录项静默拉起也会哑火）。本 cask 的信任链是
+  # tap 本身 + 上面的 sha256 校验，与 formula 二进制从未带 quarantine
+  # 的待遇对齐，故安装后移除该标记。上 Developer ID 公证后应删除
+  # 此段（彼时 quarantine 是特性而非摩擦）。
+  postflight do
+    # must_succeed: false——装时若本就没有 quarantine（用户传了
+    # --no-quarantine 等）xattr -d 会非零退出，不该因此装挂。
+    system_command "/usr/bin/xattr",
+                   args:         ["-dr", "com.apple.quarantine", "#{appdir}/Yomi.app"],
+                   must_succeed: false,
+                   print_stderr: false
+  end
+
   zap trash: [
     "~/.yomi",
     "~/Library/Logs/yomi",
