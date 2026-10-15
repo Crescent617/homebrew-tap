@@ -19,7 +19,7 @@ class Starsheep < Formula
   depends_on "libgit2"
 
   # build.zig.zon 中的 zig 包依赖（zig 0.17 在构建期拉包）。
-  # 预先落盘到 --pkg-path 目录，构建全程离线、可复现，
+  # 预先落盘到 --pkg-dir 目录，构建全程离线、可复现，
   # 也规避了 zig 0.17 自带 HTTP/git 客户端在代理环境下拉包失败的问题。
   # 升级依赖时同步更新 resource 与 ZIG_PKG_DIRS（目录名 = build.zig.zon 里的包 hash）。
   resource "chameleon" do
@@ -74,7 +74,7 @@ class Starsheep < Formula
     # --search-prefix: 让 zig 找到 libgit2 的 lib 与头文件（translate-c 需要）
     system "zig", "build",
            "--release=safe",
-           "--pkg-path", pkg_path,
+           "--pkg-dir", pkg_path,
            "--search-prefix", formula_opt_prefix("libgit2")
 
     bin.install "zig-out/bin/starsheep"
