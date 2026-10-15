@@ -5,13 +5,12 @@
 class Starsheep < Formula
   desc "Customizable shell prompt generator written in Zig"
   homepage "https://github.com/Crescent617/starsheep"
-  license "MIT"
-
   # TODO(首个 tag 发布后): 填 CI 产物的真实 sha256，两个架构不同，
   # 需要把这个占位值删掉、改成各分支内各自的 sha256：
   #   gh release download v0.1.6 -p '*.tar.gz' -D /tmp/ss-dist
   #   shasum -a 256 /tmp/ss-dist/*.tar.gz
   sha256 "0000000000000000000000000000000000000000000000000000000000000000"
+  license "MIT"
   if Hardware::CPU.arm?
     url "https://github.com/Crescent617/starsheep/releases/download/v0.1.6/starsheep_0.1.6_aarch64-macos.tar.gz"
   else
